@@ -29,10 +29,11 @@ namespace OOP_Week_1
                         numbers[currentIndex] = number;
                         currentIndex++;
 
-                        if( currentIndex == numbers.Length)
+                        if (currentIndex == numbers.Length)
                         {
                             int expandedNumberOfCells = currentIndex + 10;
                             int[] expandedNumbers = new int[expandedNumberOfCells];
+
                             for (int i = 0; i < currentIndex; i++)
                             {
                                 expandedNumbers[i] = numbers[i];
@@ -47,7 +48,6 @@ namespace OOP_Week_1
                     }
                 }
             }
-
             while (repeat);
             for (int i = 0; i < currentIndex; i++)
             {

@@ -28,6 +28,7 @@ namespace OOP_Week_1
                         Console.WriteLine("You have entered the integer " + number);
                         numbers[currentIndex] = number;
                         currentIndex++;
+
                         if( currentIndex == numbers.Length)
                         {
                             int expandedNumberOfCells = currentIndex + 10;
@@ -46,6 +47,7 @@ namespace OOP_Week_1
                     }
                 }
             }
+
             while (repeat);
             for (int i = 0; i < currentIndex; i++)
             {

@@ -62,7 +62,7 @@ namespace OOP_Lab_2
 
         public int Max()
         {
-            int maxIndex = 0;
+            int maxIndex = mStorage[0];
             for (int i = 0; i < mCurrentIndex; i++)
                 if (mStorage[i] > maxIndex)
                 {
@@ -80,7 +80,32 @@ namespace OOP_Lab_2
                     minIndex = mStorage[i];
                 }
             return minIndex;
+        }
 
+        public void BubbleSortAscending()
+        {
+            if (mCurrentIndex > 1)
+            {
+                bool swapHappened = false;
+
+                do
+                {
+                    swapHappened = false;
+                    for (int i = 1; i < mCurrentIndex; i++)
+                    {
+                        int previousNumber = mStorage[i - 1];
+                        int currentNumber = mStorage[i];
+
+                        if (currentNumber < previousNumber)
+                        {
+                            mStorage[i] = previousNumber;
+                            mStorage[i - 1] = currentNumber;
+                            swapHappened = true;
+                        }
+                    }
+                }
+                while (swapHappened);
+            }
         }
     }
 }

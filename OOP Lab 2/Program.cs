@@ -36,6 +36,7 @@ namespace OOP_Lab_2
                 }
             }
             while (repeat);
+            numbers.BubbleSortAscending();
             numbers.WriteContentsToConsole();
             Console.WriteLine("Average: " + numbers.Average());
             Console.WriteLine("Max Value " + numbers.Max());

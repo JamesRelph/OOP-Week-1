@@ -22,7 +22,7 @@ namespace OOP_Lab_2
         public void ExpandStorage(int pSizeIncrease)
         {
             int[] increasedStorage = new int[mCurrentIndex + pSizeIncrease];
-            for (int i = 0; i< mCurrentIndex; i++)
+            for (int i = 0; i < mCurrentIndex; i++)
             {
                 increasedStorage[i] = mStorage[i];
             }
@@ -39,11 +39,48 @@ namespace OOP_Lab_2
         }
 
         public void WriteContentsToConsole()
-        { 
+        {
             for (int i = 0; i < mCurrentIndex; i++)
             {
                 Console.WriteLine(mStorage[i]);
             }
+        }
+
+
+        public double Average()
+        {
+            double sum = 0;
+
+            for (int i = 0; i < mCurrentIndex; i++)
+            {
+                sum = sum + mStorage[i];
+            }
+
+            double average = sum / mCurrentIndex;
+            return average;
+        }
+
+        public int Max()
+        {
+            int maxIndex = 0;
+            for (int i = 0; i < mCurrentIndex; i++)
+                if (mStorage[i] > maxIndex)
+                {
+                    maxIndex = mStorage[i];
+                }
+            return maxIndex;
+        }
+
+        public int Min()
+        {
+            int minIndex = mStorage[0];
+            for (int i = 0; i < mCurrentIndex; i++)
+                if (mStorage[i] < minIndex)
+                {
+                    minIndex = mStorage[i];
+                }
+            return minIndex;
+
         }
     }
 }

@@ -6,9 +6,8 @@ namespace OOP_Lab_2
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[10];
-            int currentIndex = 0;
 
+            ResizableIntArray numbers = new ResizableIntArray();
             bool repeat = true;
             do
             {
@@ -26,20 +25,8 @@ namespace OOP_Lab_2
                     {
                         int number = int.Parse(line);
                         Console.WriteLine("You have entered the integer " + number);
-                        numbers[currentIndex] = number;
-                        currentIndex++;
 
-                        if (currentIndex == numbers.Length)
-                        {
-                            int expandedNumberOfCells = currentIndex + 10;
-                            int[] expandedNumbers = new int[expandedNumberOfCells];
-
-                            for (int i = 0; i < currentIndex; i++)
-                            {
-                                expandedNumbers[i] = numbers[i];
-                            }
-                            numbers = expandedNumbers;
-                        }
+                        numbers.Add(number);
                     }
 
                     catch
@@ -49,11 +36,10 @@ namespace OOP_Lab_2
                 }
             }
             while (repeat);
-            for (int i = 0; i < currentIndex; i++)
-            {
-                Console.WriteLine(numbers[i]);
-            }
-
+            numbers.WriteContentsToConsole();
+            Console.WriteLine("Average: " + numbers.Average());
+            Console.WriteLine("Max Value " + numbers.Max());
+            Console.WriteLine("Min Value " + numbers.Min());
         }
     }
 }

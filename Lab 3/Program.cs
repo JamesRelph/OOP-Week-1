@@ -6,7 +6,8 @@ namespace Lab_3
     {
         static void Main(string[] args)
         {
-            
+            HighScores highScores = new HighScores("James Relph", 1000);
+            highScores.WriteToConsole();
         }
     }
 }

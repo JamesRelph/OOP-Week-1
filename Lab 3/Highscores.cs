@@ -18,11 +18,16 @@ namespace Lab_3
         {
             get { return mScore; }
         }
-
+        
         public HighScores(string pName, int pScore)
         {
             mName = pName;
             mScore = pScore;
+        }
+
+        public void WriteToConsole()
+        {
+            Console.WriteLine(Name + " - " + Score);
         }
         
     }
